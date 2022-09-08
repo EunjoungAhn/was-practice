@@ -1,4 +1,4 @@
-package org.example.example.calculator.domain;
+package org.example.calculator.domain;
 
 import java.util.Arrays;
 

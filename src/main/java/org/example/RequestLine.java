@@ -1,0 +1,58 @@
+package org.example;
+
+import java.util.Objects;
+
+public class RequestLine {
+    private final String method; // GET
+    private final String urlPath; // /calulate?operand1=11&operator=*&operand2=55
+
+    private QueryStrings queryStrings;
+
+    // GET calulate?operand1=11&operator=*&operand2=55 HTTP/1.1
+
+    public RequestLine(String method, String urlPath, String queryString) {
+        this.method = method;
+        this.urlPath = urlPath;
+        this.queryStrings = new QueryStrings(queryString);
+    }
+
+    //프로토콜 규칙에 맞게 스플릿을 해서
+    public RequestLine(String requestLine) {
+        String[] tokens = requestLine.split(" ");
+        this.method = tokens[0];
+        String[] urlPathTokens = tokens[1].split("\\?");
+        this.urlPath = urlPathTokens[0];
+
+        if (urlPathTokens.length == 2) {
+            this.queryStrings =  new QueryStrings(urlPathTokens[1]);
+        }
+    }
+
+    public boolean isGetRequest() {
+        return "GET".equals(this.method);
+    }
+
+    public boolean matchPath(String requestPath) {
+        return urlPath.equals(requestPath);
+    }
+
+    public QueryStrings getQueryString() {
+        return this.queryStrings;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RequestLine that = (RequestLine) o;
+        return Objects.equals(method, that.method) && Objects.equals(urlPath, that.urlPath) && Objects.equals(queryStrings, that.queryStrings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(method, urlPath, queryStrings);
+    }
+
+
+
+}
