@@ -31,19 +31,30 @@ public class CustomWebApplicationServer {
 
                 /**
                  * Step1 - 사용자 요청을 메인 Thread가 처리하도록 한다.
+                 * -> 문제점이 있다. 메인 스레드가 동작이 멈추면 다음 스레드의 작업을 수행 할 수 없다.
+                 * -> 그래서 따로 스레드를 만들어서 동작 처리를 수월하게 하도록 진행한다.
+                 * Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리
+                 * 하도록 한다.
+                 * -> 2번의 문제점은 새로 스레드를 생성할때마다 스택 메모리에 쌓이면서 메모리를 사용하기 때문에
+                 * -> 메모리 낭비가 생기며 Cpu의 사용량도 증가하게 된다.
                  */
 
+                //사용자의 요청이 올때마다 스레드를 새로 생성해서 처리하도록 변경
+                new Thread(new ClientRequestHandler(clientSocker)).start();
+
+
+
+                /*
+                //----------------------------------------------- 1.
                 try(InputStream in = clientSocker.getInputStream(); OutputStream out = clientSocker.getOutputStream()){
                     BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
                     DataOutputStream dos = new DataOutputStream(out);
 
-                    /*
                     //http 요청 메시지의 -리퀘스트 라인 확인 코드
-                    String line;
-                    while ((line = br.readLine()) != ""){
-                        System.out.println(line);
-                    }
-                     */
+                    //String line;
+                    //while ((line = br.readLine()) != ""){
+                    //    System.out.println(line);
+                    //}
 
                     //요청
                     HttpRequest httpRequest = new HttpRequest(br);
@@ -67,6 +78,7 @@ public class CustomWebApplicationServer {
                         response.responseBody(body);
                     }
                 }
+                */
 
             }
         }
