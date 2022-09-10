@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7246a54-58c9-4ab6-a925-e5d14abc9838" name="Changes" comment="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다.">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/counter/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/counter/ReacConditionDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientRequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CustomWebApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CustomWebApplicationServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +64,26 @@
       <recent name="C:\Users\EunJoungAhn\Desktop\workspace\practice\was-practice\src\main\java\org\example" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.test | #1">
+  <component name="RunManager" selected="Application.ReacConditionDemo">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="was-practice.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReacConditionDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.counter.ReacConditionDemo" />
+      <module name="was-practice.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.counter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,29 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RequestLineTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="was-practice.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.RequestLineTest" />
-      <option name="METHOD_NAME" value="create" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReacConditionDemo" />
         <item itemvalue="HTTP Request.test | #1" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.QueryStringsTest.createTest" />
         <item itemvalue="JUnit.QueryStringTest.createTest" />
-        <item itemvalue="JUnit.RequestLineTest.create" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +146,7 @@
       <updated>1662637646852</updated>
       <workItem from="1662637648243" duration="7922000" />
       <workItem from="1662703634575" duration="3531000" />
-      <workItem from="1662781284554" duration="1726000" />
+      <workItem from="1662781284554" duration="2951000" />
     </task>
     <task id="LOCAL-00001" summary="Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리&#10;하도록 한다.">
       <created>1662731323385</created>
@@ -159,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662731323385</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다.">
+      <created>1662816098115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662816098115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +181,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리&#10;하도록 한다." />
-    <option name="LAST_COMMIT_MESSAGE" value="Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리&#10;하도록 한다." />
+    <MESSAGE value="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다." />
+    <option name="LAST_COMMIT_MESSAGE" value="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
