@@ -1,5 +1,11 @@
 GET http://localhost:8080/calculate?operand1=10&operator=-&operand2=55
 
+<> 2022-09-10T221924.200.json
+
+###
+
+GET http://localhost:8080/calculate?operand1=10&operator=-&operand2=55
+
 <> 2022-09-09T224442.200.json
 
 ###

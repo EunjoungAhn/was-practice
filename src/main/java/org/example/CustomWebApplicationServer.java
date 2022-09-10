@@ -1,17 +1,19 @@
 package org.example;
 
-import org.example.calculator.domain.Calculator;
-import org.example.calculator.domain.PositiveNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CustomWebApplicationServer {
     private final int port;
+
+    //스레드 풀을 적용하는 방법
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     private static final Logger logger = LoggerFactory.getLogger(CustomWebApplicationServer.class);
 
@@ -35,12 +37,15 @@ public class CustomWebApplicationServer {
                  * -> 그래서 따로 스레드를 만들어서 동작 처리를 수월하게 하도록 진행한다.
                  * Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리
                  * 하도록 한다.
-                 * -> 2번의 문제점은 새로 스레드를 생성할때마다 스택 메모리에 쌓이면서 메모리를 사용하기 때문에
+                 * -> 2번의 문제점은 새로 스레드를 생성할때(독립적으로 생김)마다 스택 메모리에 쌓이면서 메모리를 사용하기 때문에
                  * -> 메모리 낭비가 생기며 Cpu의 사용량도 증가하게 된다.
                  */
 
-                //사용자의 요청이 올때마다 스레드를 새로 생성해서 처리하도록 변경
-                new Thread(new ClientRequestHandler(clientSocker)).start();
+                //2. 사용자의 요청이 올때마다 스레드를 새로 생성해서 처리하도록 변경
+                //new Thread(new ClientRequestHandler(clientSocker)).start();
+
+                //Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다.
+                executorService.execute(new ClientRequestHandler(clientSocker));
 
 
 

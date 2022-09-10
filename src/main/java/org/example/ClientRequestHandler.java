@@ -19,7 +19,7 @@ public class ClientRequestHandler implements Runnable{
         this.clientSocker = clientSocker;
     }
 
-
+    //톰캣을 사용하면 이부분을 개발자가 구현하는 일은 없다.
     @Override
     public void run() {
         looger.info("[ClientRequestHandler] new client {} started", Thread.currentThread().getName());
