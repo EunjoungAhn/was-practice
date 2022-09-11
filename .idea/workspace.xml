@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7246a54-58c9-4ab6-a925-e5d14abc9838" name="Changes" comment="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/counter/Counter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/counter/ReacConditionDemo.java" afterDir="false" />
+    <list default="true" id="c7246a54-58c9-4ab6-a925-e5d14abc9838" name="Changes" comment="계산기 서블릿 만들기">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CalculatorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WebApplicationServerLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="was-practice" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -146,7 +164,8 @@
       <updated>1662637646852</updated>
       <workItem from="1662637648243" duration="7922000" />
       <workItem from="1662703634575" duration="3531000" />
-      <workItem from="1662781284554" duration="2951000" />
+      <workItem from="1662781284554" duration="3867000" />
+      <workItem from="1662898074243" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리&#10;하도록 한다.">
       <created>1662731323385</created>
@@ -162,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662816098115</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="CGI 프로그램과 서블릿">
+      <created>1662820498419</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662820498419</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +208,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Step2 - 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리&#10;하도록 한다." />
     <MESSAGE value="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다." />
-    <option name="LAST_COMMIT_MESSAGE" value="Step3 - Thread Pool을 적용해 안정적인 서비스가 가능하도록 한다." />
+    <MESSAGE value="CGI 프로그램과 서블릿" />
+    <option name="LAST_COMMIT_MESSAGE" value="CGI 프로그램과 서블릿" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
